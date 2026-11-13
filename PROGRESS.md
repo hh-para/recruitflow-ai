@@ -9,6 +9,7 @@
   - 业务执行评测（`tests/test_e2e_business.py` + `harness/demo_events.py`）。
   - 离线演示 `scripts/init_demo.py`；文档 `docs/SOLUTION.md` / `docs/DEMO_SCRIPT.md` / `docs/EVALUATION.md`；README 更新。
 - **真实模型切换为 DeepSeek 官方 API** ✅（`adapters/deepseek_adapter.py` 复用 OpenAI 兼容实现）
+- **公开在线预览加固** ✅（`harness/demo_limits.py` 服务端限制 + `app.py` 公开预览门控/口令/只读/自动填充演示数据）
 
 ## 实际验证结果
 

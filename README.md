@@ -231,6 +231,25 @@ python -m scripts.extract_one "新增候选人C101周晓，应聘产品运营，
 
 ---
 
+## 公开预览（在线部署）
+
+可部署到 Streamlit Community Cloud 等平台，作为无需密钥的**只读演示**：
+
+- `RECRUITFLOW_PUBLIC_PREVIEW=1` 开启公开预览，默认**只读**（台账/看板/待确认/同步只读，不写库）。
+- 配置 `RECRUITFLOW_DEMO_PASSWORD` 后，访客输入正确口令（**服务端校验**）方可进行真实 AI 操作。
+- 真实 AI 操作有**服务端限制**（不依赖隐藏按钮）：
+  - `RECRUITFLOW_MAX_MSG_LEN`：消息长度上限（默认 500 字符）。
+  - `RECRUITFLOW_AI_RATE_LIMIT` + `RECRUITFLOW_AI_RATE_WINDOW_SECONDS`：调用频率（默认每 3600 秒 10 次）。
+  - `RECRUITFLOW_AI_TOTAL_LIMIT`：总调用次数上限（默认 100）。
+  - `RECRUITFLOW_LIMITS_DB`：限制计数库路径（默认 `demo-limits.db`）。
+- 访客**无法重置数据库或执行管理操作**（重置仅能通过 `scripts/init_demo.py` 命令行，页面无此入口）。
+- 页面顶部提示「仅使用虚构数据；公共演示数据可能被其他访客看到」。
+
+> 托管平台（如 Streamlit Community Cloud）的本地文件系统通常**不持久**：SQLite 数据库与限制计数
+> 会在重启/重新部署后重置，应用会重建初始演示数据。若需持久化，需自行挂载持久存储。
+
+---
+
 ## 数据库说明
 
 - 业务/演示库为**文件型 SQLite**，默认路径 `recruitflow-demo.db`（`RECRUITFLOW_DB_PATH` 覆盖）。

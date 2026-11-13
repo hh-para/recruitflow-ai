@@ -28,12 +28,38 @@ def db_path(tmp_path, monkeypatch):
     p = str(tmp_path / "test.db")
     monkeypatch.setenv("RECRUITFLOW_DB_PATH", p)
     monkeypatch.setenv("RECRUITFLOW_MOCK_SYNC_DB", str(tmp_path / "mock-sync.db"))
+    monkeypatch.setenv("RECRUITFLOW_LIMITS_DB", str(tmp_path / "limits.db"))
     return p
 
 
 def test_app_starts(db_path):
     at = AppTest.from_file(APP_PATH, default_timeout=30).run()
     assert not at.exception
+
+
+def test_public_preview_read_only(db_path, monkeypatch):
+    monkeypatch.setenv("RECRUITFLOW_PUBLIC_PREVIEW", "1")
+    monkeypatch.delenv("RECRUITFLOW_DEMO_PASSWORD", raising=False)
+    at = AppTest.from_file(APP_PATH, default_timeout=30).run()
+    assert not at.exception
+    # 只读：无“处理”提交按钮
+    assert not any(b.key == "submit" for b in at.form_submit_button)
+
+
+def test_public_preview_password_unlock(db_path, monkeypatch):
+    monkeypatch.setenv("RECRUITFLOW_PUBLIC_PREVIEW", "1")
+    monkeypatch.setenv("RECRUITFLOW_DEMO_PASSWORD", "secret123")
+    at = AppTest.from_file(APP_PATH, default_timeout=30).run()
+    assert not at.exception
+    assert _find(at.form_submit_button, "pw_submit") is not None
+    assert not any(b.key == "submit" for b in at.form_submit_button)
+
+    # 输入正确口令解锁
+    _find(at.text_input, "demo_pw").input("secret123")
+    _find(at.form_submit_button, "pw_submit").click()
+    at.run()
+    assert not at.exception
+    assert any(b.key == "submit" for b in at.form_submit_button)
 
 
 def test_dashboard_empty_renders(db_path):

@@ -21,6 +21,7 @@ import streamlit as st
 from adapters import DeepSeekAdapter
 from adapters.errors import AdapterConfigError
 from adapters.mock_sync import MockSyncAdapter
+from harness.demo_limits import DemoLimiter
 from harness.processor import DeliveryHarness, Outcome
 from harness.schema import EventType, StructuredEvent
 from harness.stats import compute_stats
@@ -61,7 +62,14 @@ def _now_shanghai() -> str:
     return datetime.now(TZ_SHANGHAI).isoformat()
 
 
-def _process_message(repo: LedgerRepository, delivery: dict, event_json: str | None, mode: str) -> Outcome:
+def _process_message(
+    repo: LedgerRepository,
+    delivery: dict,
+    event_json: str | None,
+    mode: str,
+    limiter: DemoLimiter | None = None,
+    max_len: int = 500,
+) -> Outcome:
     harness = DeliveryHarness(repo)
     if mode == "手动结构化事件模式":
         try:
@@ -75,6 +83,12 @@ def _process_message(repo: LedgerRepository, delivery: dict, event_json: str | N
         return harness.process_with_event(delivery, event)
 
     # 真实模型模式（DeepSeek 官方 API，非思考 + JSON 输出，本地 Pydantic 校验）
+    # 服务端限制（消息长度 / 频率 / 总量），不依赖隐藏按钮。
+    if limiter is not None:
+        allowed, reason = limiter.check_and_consume(delivery["text"], max_len)
+        if not allowed:
+            return Outcome("failed", error=reason)
+
     try:
         adapter = DeepSeekAdapter()
     except AdapterConfigError as exc:
@@ -137,9 +151,40 @@ def _change_history_rows(repo: LedgerRepository, application_id: str) -> list[di
 
 st.set_page_config(page_title="RecruitFlow AI", layout="wide")
 
+
+def _cfg(name: str, default=None):
+    try:
+        v = st.secrets.get(name)
+        if v is not None:
+            return v
+    except Exception:
+        pass
+    return os.environ.get(name, default)
+
+
+# ---- 公开预览配置（服务端读取） ----
+PUBLIC_PREVIEW = str(_cfg("RECRUITFLOW_PUBLIC_PREVIEW", "0")).strip().lower() in ("1", "true", "yes", "on")
+DEMO_PASSWORD = _cfg("RECRUITFLOW_DEMO_PASSWORD", None)
+MAX_MSG_LEN = int(_cfg("RECRUITFLOW_MAX_MSG_LEN", "500"))
+AI_RATE_LIMIT = int(_cfg("RECRUITFLOW_AI_RATE_LIMIT", "10"))
+AI_RATE_WINDOW = int(_cfg("RECRUITFLOW_AI_RATE_WINDOW_SECONDS", "3600"))
+AI_TOTAL_LIMIT = int(_cfg("RECRUITFLOW_AI_TOTAL_LIMIT", "100"))
+LIMITS_DB = os.environ.get(
+    "RECRUITFLOW_LIMITS_DB",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "demo-limits.db"),
+)
+
 # 每次 rerun 新建连接，避免跨线程复用不安全的 SQLite 连接。
 conn = init_db(_db_path())
 repo = LedgerRepository(conn)
+
+# 公开预览：若数据库为空，自动重放人工标注事件，提供只读演示数据（不调用模型、不导入最终状态）。
+if PUBLIC_PREVIEW and not repo.list_candidates():
+    from harness.demo_events import HUMAN_DELIVERIES, build_delivery
+
+    _demo_harness = DeliveryHarness(repo)
+    for _entry in HUMAN_DELIVERIES:
+        _demo_harness.process_with_event(build_delivery(_entry), _entry["event"])
 
 st.title("RecruitFlow AI — 招聘数据记录 Demo")
 st.caption("企微消息入口为模拟；腾讯文档未接入（同步任务仅落库，显示“待同步”）。")
@@ -147,7 +192,33 @@ st.caption("企微消息入口为模拟；腾讯文档未接入（同步任务�
 if os.path.exists(_db_path() + ".demo"):
     st.info("人工标注事件演示（离线，通过 Harness 重放人工标注事件，未调用大模型）。")
 
-mode = st.radio("处理模式", ["手动结构化事件模式", "真实模型模式"], horizontal=True)
+# ---- 公开预览门控 ----
+if PUBLIC_PREVIEW:
+    st.warning("⚠️ 仅使用虚构数据；这是公共演示，数据可能被其他访客看到。")
+    if DEMO_PASSWORD:
+        if not st.session_state.get("demo_unlocked", False):
+            with st.form("pw_form"):
+                pw = st.text_input("演示访问口令", type="password", key="demo_pw")
+                if st.form_submit_button("验证口令", key="pw_submit"):
+                    if pw == DEMO_PASSWORD:  # 服务端校验
+                        st.session_state.demo_unlocked = True
+                        st.rerun()
+                    else:
+                        st.error("口令错误")
+        else:
+            st.success("已通过演示口令验证，可进行真实 AI 操作。")
+    else:
+        st.info("本预览为只读（未配置演示口令，真实 AI 不可用）。")
+    mode = "真实模型模式"  # 公开预览：手动模式仅本地可用
+    can_write = bool(DEMO_PASSWORD) and bool(st.session_state.get("demo_unlocked", False))
+    limiter = DemoLimiter(
+        LIMITS_DB, max_total=AI_TOTAL_LIMIT, max_per_window=AI_RATE_LIMIT, window_seconds=AI_RATE_WINDOW
+    )
+else:
+    mode = st.radio("处理模式", ["手动结构化事件模式", "真实模型模式"], horizontal=True)
+    can_write = True
+    limiter = None
+
 if mode == "手动结构化事件模式":
     st.info("未调用大模型，仅验证业务流程：请在下方填写结构化事件 JSON。")
 else:
@@ -160,47 +231,50 @@ tab_msg, tab_ledger, tab_review, tab_dashboard, tab_sync = st.tabs(["消息处�
 with tab_msg:
     st.subheader("消息处理")
 
-    if "msg_seq" not in st.session_state:
-        st.session_state.msg_seq = 1
+    if not can_write:
+        st.info("当前为只读演示，无法提交消息。若需体验真实 AI，请输入演示访问口令。")
+    else:
+        if "msg_seq" not in st.session_state:
+            st.session_state.msg_seq = 1
 
-    with st.form("process_form"):
-        c1, c2, c3 = st.columns(3)
-        source = c1.text_input("来源 source", value="mock_wecom", key="src")
-        group_id = c2.text_input("群组 group_id", value="G_RECRUIT_001", key="grp")
-        message_id = c3.text_input("消息ID message_id", value=f"M{st.session_state.msg_seq:03d}", key="mid")
-        c4, c5 = st.columns(2)
-        sender_id = c4.text_input("发送人ID", value="HR001", key="sid")
-        sender_name = c4.text_input("发送人姓名", value="林悦", key="sname")
-        sent_at = c5.text_input("发送时间 sent_at（Asia/Shanghai）", value="2026-11-19T09:00:00+08:00", key="sent")
-        text = st.text_area("消息原文", height=90, key="text")
+        with st.form("process_form"):
+            c1, c2, c3 = st.columns(3)
+            source = c1.text_input("来源 source", value="mock_wecom", key="src")
+            group_id = c2.text_input("群组 group_id", value="G_RECRUIT_001", key="grp")
+            message_id = c3.text_input("消息ID message_id", value=f"M{st.session_state.msg_seq:03d}", key="mid")
+            c4, c5 = st.columns(2)
+            sender_id = c4.text_input("发送人ID", value="HR001", key="sid")
+            sender_name = c4.text_input("发送人姓名", value="林悦", key="sname")
+            sent_at = c5.text_input("发送时间 sent_at（Asia/Shanghai）", value="2026-11-19T09:00:00+08:00", key="sent")
+            text = st.text_area("消息原文", height=90, key="text")
 
-        if mode == "手动结构化事件模式":
-            event_json = st.text_area(
-                "结构化事件 JSON（经 Pydantic 校验后交给同一 Harness）",
-                height=180,
-                value=json.dumps(_EXAMPLE_EVENT, ensure_ascii=False, indent=2),
-                key="event_json",
-            )
-        else:
-            event_json = None
+            if mode == "手动结构化事件模式":
+                event_json = st.text_area(
+                    "结构化事件 JSON（经 Pydantic 校验后交给同一 Harness）",
+                    height=180,
+                    value=json.dumps(_EXAMPLE_EVENT, ensure_ascii=False, indent=2),
+                    key="event_json",
+                )
+            else:
+                event_json = None
 
-        submitted = st.form_submit_button("处理", key="submit")
+            submitted = st.form_submit_button("处理", key="submit")
 
-    if submitted:
-        delivery = {
-            "delivery_id": f"D-{message_id}",
-            "source": source,
-            "group_id": group_id,
-            "message_id": message_id,
-            "sent_at": sent_at,
-            "sender_id": sender_id,
-            "sender_name": sender_name,
-            "text": text,
-        }
-        outcome = _process_message(repo, delivery, event_json, mode)
-        _render_outcome(outcome)
-        if outcome.status not in ("duplicate", "failed"):
-            st.session_state.msg_seq += 1
+        if submitted:
+            delivery = {
+                "delivery_id": f"D-{message_id}",
+                "source": source,
+                "group_id": group_id,
+                "message_id": message_id,
+                "sent_at": sent_at,
+                "sender_id": sender_id,
+                "sender_name": sender_name,
+                "text": text,
+            }
+            outcome = _process_message(repo, delivery, event_json, mode, limiter, MAX_MSG_LEN)
+            _render_outcome(outcome)
+            if outcome.status not in ("duplicate", "failed"):
+                st.session_state.msg_seq += 1
 
 
 # ====================================================================== 招聘台账
@@ -286,6 +360,11 @@ with tab_review:
                         target_map[label] = aid
                 if not target_map:
                     st.write("（无可选目标应聘记录）")
+                    continue
+
+                st.write("候选目标：", list(target_map.keys()))
+                if not can_write:
+                    st.write("（只读演示，无法确认）")
                     continue
 
                 target_label = st.selectbox(
@@ -397,18 +476,22 @@ with tab_sync:
         "RECRUITFLOW_MOCK_SYNC_DB",
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "mock-sync.db"),
     )
-    mock_fail = st.checkbox("模拟下一次同步临时失败", value=False, key="mock_fail")
 
-    if st.button("执行到期任务", key="run_due"):
-        adapter = MockSyncAdapter(mock_sync_db, fail_first_n=1 if mock_fail else 0)
-        results = run_due_tasks(repo, adapter)
-        st.write("执行结果：", [r["status"] for r in results] or "（无到期任务）")
+    if not can_write:
+        st.info("（只读演示，无法执行同步任务）")
+    else:
+        mock_fail = st.checkbox("模拟下一次同步临时失败", value=False, key="mock_fail")
 
-    if st.button("重试全部失败任务", key="retry_failed"):
-        for t in repo.list_sync_tasks():
-            if t["status"] == "failed":
-                retry_failed(repo, t["task_id"])
-        st.write("已重置失败任务为待同步，请点“执行到期任务”。")
+        if st.button("执行到期任务", key="run_due"):
+            adapter = MockSyncAdapter(mock_sync_db, fail_first_n=1 if mock_fail else 0)
+            results = run_due_tasks(repo, adapter)
+            st.write("执行结果：", [r["status"] for r in results] or "（无到期任务）")
+
+        if st.button("重试全部失败任务", key="retry_failed"):
+            for t in repo.list_sync_tasks():
+                if t["status"] == "failed":
+                    retry_failed(repo, t["task_id"])
+            st.write("已重置失败任务为待同步，请点“执行到期任务”。")
 
     status_labels = {
         "pending": "待同步",
