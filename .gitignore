@@ -1,0 +1,12 @@
+# 密钥与本地数据（不进入版本库）
+.env
+*.db
+*.demo
+
+# Python 缓存
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 其它
+.DS_Store

@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "timezone": "Asia/Shanghai",
+  "dataset_type": "synthetic",
+  "initial_state": "empty",
+  "deliveries": [
+    {
+      "delivery_id": "D001",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M001",
+      "sent_at": "2026-11-16T09:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "新增候选人C001王小明，应聘后端开发，BOSS直聘来的，我负责跟进。"
+    },
+    {
+      "delivery_id": "D002",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M002",
+      "sent_at": "2026-11-16T09:05:00+08:00",
+      "sender_id": "HR002",
+      "sender_name": "周宁",
+      "text": "C002赵可欣，内推产品经理，由我跟进。"
+    },
+    {
+      "delivery_id": "D003",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M003",
+      "sent_at": "2026-11-16T09:10:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C003李明，官网投递数据分析师，我来跟。"
+    },
+    {
+      "delivery_id": "D004",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M004",
+      "sent_at": "2026-11-16T09:15:00+08:00",
+      "sender_id": "HR002",
+      "sender_name": "周宁",
+      "text": "C004李明应聘前端开发，渠道猎聘，负责人周宁。"
+    },
+    {
+      "delivery_id": "D005",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M005",
+      "sent_at": "2026-11-16T09:20:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C005陈雨投递运营专员，来源BOSS直聘，我负责。"
+    },
+    {
+      "delivery_id": "D006",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M006",
+      "sent_at": "2026-11-16T09:25:00+08:00",
+      "sender_id": "HR002",
+      "sender_name": "周宁",
+      "text": "C006刘洋，内推测试工程师，由我负责。"
+    },
+    {
+      "delivery_id": "D007",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M007",
+      "sent_at": "2026-11-16T10:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001后端开发简历初筛通过。"
+    },
+    {
+      "delivery_id": "D008",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M008",
+      "sent_at": "2026-11-16T10:10:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001后端开发一面定在明天下午3点，面试官陈峰。"
+    },
+    {
+      "delivery_id": "D009",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M009",
+      "sent_at": "2026-11-16T10:20:00+08:00",
+      "sender_id": "HR002",
+      "sender_name": "周宁",
+      "text": "C002产品经理一面安排在11月18日上午10点，面试官何敏。"
+    },
+    {
+      "delivery_id": "D010",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M010",
+      "sent_at": "2026-11-16T10:30:00+08:00",
+      "sender_id": "HR002",
+      "sender_name": "周宁",
+      "text": "C006测试工程师初筛通过，建议下周安排一面，时间还没定。"
+    },
+    {
+      "delivery_id": "D011",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M011",
+      "sent_at": "2026-11-16T11:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001后端开发一面改到11月18日下午2点，面试官不变。"
+    },
+    {
+      "delivery_id": "D012",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M011",
+      "sent_at": "2026-11-16T11:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001后端开发一面改到11月18日下午2点，面试官不变。"
+    },
+    {
+      "delivery_id": "D013",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M012",
+      "sent_at": "2026-11-16T11:10:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "李明明天下午2点一面，面试官孙磊。"
+    },
+    {
+      "delivery_id": "D014",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M013",
+      "sent_at": "2026-11-16T11:15:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "确认M012说的是C003李明，数据分析师。"
+    },
+    {
+      "delivery_id": "D015",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M014",
+      "sent_at": "2026-11-16T14:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C005陈雨运营专员初筛没通过，暂不安排面试。"
+    },
+    {
+      "delivery_id": "D016",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M015",
+      "sent_at": "2026-11-17T15:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C003李明数据分析师一面通过，二面时间待定。"
+    },
+    {
+      "delivery_id": "D017",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M016",
+      "sent_at": "2026-11-17T15:05:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "更正上一条，C003一面结果是待定，不是通过。"
+    },
+    {
+      "delivery_id": "D018",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M017",
+      "sent_at": "2026-11-17T16:00:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001王小明也投了数据工程师，仍是BOSS直聘，由我负责，刚收到简历。"
+    },
+    {
+      "delivery_id": "D019",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M018",
+      "sent_at": "2026-11-17T16:10:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "C001的面试取消了，他不继续应聘这个岗位了。"
+    },
+    {
+      "delivery_id": "D020",
+      "source": "mock_wecom",
+      "group_id": "G_RECRUIT_001",
+      "message_id": "M019",
+      "sent_at": "2026-11-17T16:15:00+08:00",
+      "sender_id": "HR001",
+      "sender_name": "林悦",
+      "text": "确认M018指后端开发，数据工程师继续。"
+    }
+  ]
+}

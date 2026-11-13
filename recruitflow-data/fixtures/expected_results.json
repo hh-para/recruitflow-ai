@@ -1,0 +1,2454 @@
+{
+  "schema_version": "1.0",
+  "results": [
+    {
+      "delivery_id": "D001",
+      "message_id": "M001",
+      "expected_action": "create_application",
+      "expected_application_id": "A001",
+      "expected_candidate_id": "C001",
+      "expected_position": "后端开发",
+      "expected_changes": {
+        "candidate_id": "C001",
+        "position": "后端开发",
+        "channel": "BOSS直聘",
+        "hr_owner": "林悦",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 1,
+        "applications": 1,
+        "interviews": 0,
+        "business_events": 1,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D002",
+      "message_id": "M002",
+      "expected_action": "create_application",
+      "expected_application_id": "A002",
+      "expected_candidate_id": "C002",
+      "expected_position": "产品经理",
+      "expected_changes": {
+        "candidate_id": "C002",
+        "position": "产品经理",
+        "channel": "内推",
+        "hr_owner": "周宁",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 2,
+        "applications": 2,
+        "interviews": 0,
+        "business_events": 2,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D003",
+      "message_id": "M003",
+      "expected_action": "create_application",
+      "expected_application_id": "A003",
+      "expected_candidate_id": "C003",
+      "expected_position": "数据分析师",
+      "expected_changes": {
+        "candidate_id": "C003",
+        "position": "数据分析师",
+        "channel": "官网",
+        "hr_owner": "林悦",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 3,
+        "applications": 3,
+        "interviews": 0,
+        "business_events": 3,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D004",
+      "message_id": "M004",
+      "expected_action": "create_application",
+      "expected_application_id": "A004",
+      "expected_candidate_id": "C004",
+      "expected_position": "前端开发",
+      "expected_changes": {
+        "candidate_id": "C004",
+        "position": "前端开发",
+        "channel": "猎聘",
+        "hr_owner": "周宁",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 4,
+        "applications": 4,
+        "interviews": 0,
+        "business_events": 4,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D005",
+      "message_id": "M005",
+      "expected_action": "create_application",
+      "expected_application_id": "A005",
+      "expected_candidate_id": "C005",
+      "expected_position": "运营专员",
+      "expected_changes": {
+        "candidate_id": "C005",
+        "position": "运营专员",
+        "channel": "BOSS直聘",
+        "hr_owner": "林悦",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 5,
+        "applications": 5,
+        "interviews": 0,
+        "business_events": 5,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D006",
+      "message_id": "M006",
+      "expected_action": "create_application",
+      "expected_application_id": "A006",
+      "expected_candidate_id": "C006",
+      "expected_position": "测试工程师",
+      "expected_changes": {
+        "candidate_id": "C006",
+        "position": "测试工程师",
+        "channel": "内推",
+        "hr_owner": "周宁",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 0,
+        "business_events": 6,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D007",
+      "message_id": "M007",
+      "expected_action": "update_application",
+      "expected_application_id": "A001",
+      "expected_candidate_id": "C001",
+      "expected_position": "后端开发",
+      "expected_changes": {
+        "stage": "初筛通过"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [
+        "applications.A001.channel",
+        "applications.A001.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 0,
+        "business_events": 7,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "初筛通过"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D008",
+      "message_id": "M008",
+      "expected_action": "schedule_interview",
+      "expected_application_id": "A001",
+      "expected_candidate_id": "C001",
+      "expected_position": "后端开发",
+      "expected_changes": {
+        "stage": "一面待进行"
+      },
+      "expected_interview_after": {
+        "interview_id": "I001",
+        "application_id": "A001",
+        "round": 1,
+        "scheduled_at": "2026-11-17T15:00:00+08:00",
+        "interviewer": "陈峰",
+        "status": "待进行",
+        "result": null
+      },
+      "expected_preserve_paths": [
+        "applications.A001.channel",
+        "applications.A001.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 1,
+        "business_events": 8,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-17T15:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D009",
+      "message_id": "M009",
+      "expected_action": "schedule_interview",
+      "expected_application_id": "A002",
+      "expected_candidate_id": "C002",
+      "expected_position": "产品经理",
+      "expected_changes": {
+        "stage": "一面待进行"
+      },
+      "expected_interview_after": {
+        "interview_id": "I002",
+        "application_id": "A002",
+        "round": 1,
+        "scheduled_at": "2026-11-18T10:00:00+08:00",
+        "interviewer": "何敏",
+        "status": "待进行",
+        "result": null
+      },
+      "expected_preserve_paths": [
+        "applications.A002.channel",
+        "applications.A002.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 2,
+        "business_events": 9,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-17T15:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D010",
+      "message_id": "M010",
+      "expected_action": "update_application",
+      "expected_application_id": "A006",
+      "expected_candidate_id": "C006",
+      "expected_position": "测试工程师",
+      "expected_changes": {
+        "stage": "初筛通过"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [
+        "applications.A006.channel",
+        "applications.A006.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 2,
+        "business_events": 10,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-17T15:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D011",
+      "message_id": "M011",
+      "expected_action": "reschedule_interview",
+      "expected_application_id": "A001",
+      "expected_candidate_id": "C001",
+      "expected_position": "后端开发",
+      "expected_changes": {},
+      "expected_interview_after": {
+        "interview_id": "I001",
+        "application_id": "A001",
+        "round": 1,
+        "scheduled_at": "2026-11-18T14:00:00+08:00",
+        "interviewer": "陈峰",
+        "status": "待进行",
+        "result": null
+      },
+      "expected_preserve_paths": [
+        "interviews.I001.interviewer",
+        "applications.A001.channel",
+        "applications.A001.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 2,
+        "business_events": 11,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D012",
+      "message_id": "M011",
+      "expected_action": "duplicate",
+      "expected_application_id": null,
+      "expected_candidate_id": null,
+      "expected_position": null,
+      "expected_changes": {},
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": "M011",
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 2,
+        "business_events": 11,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": []
+      }
+    },
+    {
+      "delivery_id": "D013",
+      "message_id": "M012",
+      "expected_action": "create_review",
+      "expected_application_id": null,
+      "expected_candidate_id": null,
+      "expected_position": null,
+      "expected_changes": {},
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": true,
+      "possible_application_ids": [
+        "A003",
+        "A004"
+      ],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 2,
+        "business_events": 11,
+        "open_reviews": 1
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "pending",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": null
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D014",
+      "message_id": "M013",
+      "expected_action": "resolve_review",
+      "expected_application_id": "A003",
+      "expected_candidate_id": "C003",
+      "expected_position": "数据分析师",
+      "expected_changes": {
+        "stage": "一面待进行"
+      },
+      "expected_interview_after": {
+        "interview_id": "I003",
+        "application_id": "A003",
+        "round": 1,
+        "scheduled_at": "2026-11-17T14:00:00+08:00",
+        "interviewer": "孙磊",
+        "status": "待进行",
+        "result": null
+      },
+      "expected_preserve_paths": [
+        "applications.A003.channel",
+        "applications.A003.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": "M012",
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 3,
+        "business_events": 12,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D015",
+      "message_id": "M014",
+      "expected_action": "update_application",
+      "expected_application_id": "A005",
+      "expected_candidate_id": "C005",
+      "expected_position": "运营专员",
+      "expected_changes": {
+        "stage": "未通过"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [
+        "applications.A005.channel",
+        "applications.A005.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 3,
+        "business_events": 13,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "待进行",
+            "result": null
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D016",
+      "message_id": "M015",
+      "expected_action": "update_application",
+      "expected_application_id": "A003",
+      "expected_candidate_id": "C003",
+      "expected_position": "数据分析师",
+      "expected_changes": {
+        "stage": "一面通过"
+      },
+      "expected_interview_after": {
+        "interview_id": "I003",
+        "application_id": "A003",
+        "round": 1,
+        "scheduled_at": "2026-11-17T14:00:00+08:00",
+        "interviewer": "孙磊",
+        "status": "已完成",
+        "result": "通过"
+      },
+      "expected_preserve_paths": [
+        "applications.A003.channel",
+        "applications.A003.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 3,
+        "business_events": 14,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "一面通过"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "已完成",
+            "result": "通过"
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D017",
+      "message_id": "M016",
+      "expected_action": "update_application",
+      "expected_application_id": "A003",
+      "expected_candidate_id": "C003",
+      "expected_position": "数据分析师",
+      "expected_changes": {
+        "stage": "待定"
+      },
+      "expected_interview_after": {
+        "interview_id": "I003",
+        "application_id": "A003",
+        "round": 1,
+        "scheduled_at": "2026-11-17T14:00:00+08:00",
+        "interviewer": "孙磊",
+        "status": "已完成",
+        "result": "待定"
+      },
+      "expected_preserve_paths": [
+        "applications.A003.channel",
+        "applications.A003.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": "M015",
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 6,
+        "interviews": 3,
+        "business_events": 15,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "待定"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "已完成",
+            "result": "待定"
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D018",
+      "message_id": "M017",
+      "expected_action": "create_application",
+      "expected_application_id": "A007",
+      "expected_candidate_id": "C001",
+      "expected_position": "数据工程师",
+      "expected_changes": {
+        "candidate_id": "C001",
+        "position": "数据工程师",
+        "channel": "BOSS直聘",
+        "hr_owner": "林悦",
+        "stage": "新投递"
+      },
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 7,
+        "interviews": 3,
+        "business_events": 16,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "待定"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          },
+          {
+            "application_id": "A007",
+            "candidate_id": "C001",
+            "position": "数据工程师",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "已完成",
+            "result": "待定"
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D019",
+      "message_id": "M018",
+      "expected_action": "create_review",
+      "expected_application_id": null,
+      "expected_candidate_id": null,
+      "expected_position": null,
+      "expected_changes": {},
+      "expected_interview_after": null,
+      "expected_preserve_paths": [],
+      "expected_clear_paths": [],
+      "reference_message_id": null,
+      "expected_review_required": true,
+      "possible_application_ids": [
+        "A001",
+        "A007"
+      ],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 7,
+        "interviews": 3,
+        "business_events": 16,
+        "open_reviews": 1
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "待定"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          },
+          {
+            "application_id": "A007",
+            "candidate_id": "C001",
+            "position": "数据工程师",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "已完成",
+            "result": "待定"
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          },
+          {
+            "message_id": "M018",
+            "status": "pending",
+            "reason": "application_ambiguous",
+            "possible_application_ids": [
+              "A001",
+              "A007"
+            ],
+            "resolved_by": null
+          }
+        ]
+      }
+    },
+    {
+      "delivery_id": "D020",
+      "message_id": "M019",
+      "expected_action": "resolve_review",
+      "expected_application_id": "A001",
+      "expected_candidate_id": "C001",
+      "expected_position": "后端开发",
+      "expected_changes": {
+        "stage": "候选人退出"
+      },
+      "expected_interview_after": {
+        "interview_id": "I001",
+        "application_id": "A001",
+        "round": 1,
+        "scheduled_at": "2026-11-18T14:00:00+08:00",
+        "interviewer": "陈峰",
+        "status": "已取消",
+        "result": null
+      },
+      "expected_preserve_paths": [
+        "applications.A007",
+        "interviews.I001.scheduled_at",
+        "interviews.I001.interviewer",
+        "applications.A001.channel",
+        "applications.A001.hr_owner"
+      ],
+      "expected_clear_paths": [],
+      "reference_message_id": "M018",
+      "expected_review_required": false,
+      "possible_application_ids": [],
+      "expected_counts_after": {
+        "candidates": 6,
+        "applications": 7,
+        "interviews": 3,
+        "business_events": 17,
+        "open_reviews": 0
+      },
+      "expected_state_after": {
+        "candidates": [
+          {
+            "candidate_id": "C001",
+            "name": "王小明"
+          },
+          {
+            "candidate_id": "C002",
+            "name": "赵可欣"
+          },
+          {
+            "candidate_id": "C003",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C004",
+            "name": "李明"
+          },
+          {
+            "candidate_id": "C005",
+            "name": "陈雨"
+          },
+          {
+            "candidate_id": "C006",
+            "name": "刘洋"
+          }
+        ],
+        "applications": [
+          {
+            "application_id": "A001",
+            "candidate_id": "C001",
+            "position": "后端开发",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "候选人退出"
+          },
+          {
+            "application_id": "A002",
+            "candidate_id": "C002",
+            "position": "产品经理",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "一面待进行"
+          },
+          {
+            "application_id": "A003",
+            "candidate_id": "C003",
+            "position": "数据分析师",
+            "channel": "官网",
+            "hr_owner": "林悦",
+            "stage": "待定"
+          },
+          {
+            "application_id": "A004",
+            "candidate_id": "C004",
+            "position": "前端开发",
+            "channel": "猎聘",
+            "hr_owner": "周宁",
+            "stage": "新投递"
+          },
+          {
+            "application_id": "A005",
+            "candidate_id": "C005",
+            "position": "运营专员",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "未通过"
+          },
+          {
+            "application_id": "A006",
+            "candidate_id": "C006",
+            "position": "测试工程师",
+            "channel": "内推",
+            "hr_owner": "周宁",
+            "stage": "初筛通过"
+          },
+          {
+            "application_id": "A007",
+            "candidate_id": "C001",
+            "position": "数据工程师",
+            "channel": "BOSS直聘",
+            "hr_owner": "林悦",
+            "stage": "新投递"
+          }
+        ],
+        "interviews": [
+          {
+            "interview_id": "I001",
+            "application_id": "A001",
+            "round": 1,
+            "scheduled_at": "2026-11-18T14:00:00+08:00",
+            "interviewer": "陈峰",
+            "status": "已取消",
+            "result": null
+          },
+          {
+            "interview_id": "I002",
+            "application_id": "A002",
+            "round": 1,
+            "scheduled_at": "2026-11-18T10:00:00+08:00",
+            "interviewer": "何敏",
+            "status": "待进行",
+            "result": null
+          },
+          {
+            "interview_id": "I003",
+            "application_id": "A003",
+            "round": 1,
+            "scheduled_at": "2026-11-17T14:00:00+08:00",
+            "interviewer": "孙磊",
+            "status": "已完成",
+            "result": "待定"
+          }
+        ],
+        "reviews": [
+          {
+            "message_id": "M012",
+            "status": "resolved",
+            "reason": "candidate_ambiguous",
+            "possible_application_ids": [
+              "A003",
+              "A004"
+            ],
+            "resolved_by": "M013"
+          },
+          {
+            "message_id": "M018",
+            "status": "resolved",
+            "reason": "application_ambiguous",
+            "possible_application_ids": [
+              "A001",
+              "A007"
+            ],
+            "resolved_by": "M019"
+          }
+        ]
+      }
+    }
+  ]
+}
