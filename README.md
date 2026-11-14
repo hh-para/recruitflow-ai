@@ -9,27 +9,6 @@
 
 ---
 
-## 目录
-
-- [项目简介](#项目简介)
-- [功能特性](#功能特性)
-- [架构](#架构)
-- [目录结构](#目录结构)
-- [技术栈与依赖](#技术栈与依赖)
-- [快速开始](#快速开始)
-- [配置（环境变量）](#配置环境变量)
-- [运行](#运行)
-- [两种处理模式](#两种处理模式)
-- [数据库说明](#数据库说明)
-- [核心业务规则](#核心业务规则)
-- [数据模型](#数据模型)
-- [测试与评测](#测试与评测)
-- [模拟与真实接入边界](#模拟与真实接入边界)
-- [已知限制](#已知限制)
-- [文档索引](#文档索引)
-
----
-
 ## 项目简介
 
 招聘进展通常散落在群聊消息里（新增候选人、安排/改期面试、结果反馈、更正、退出等），人工
@@ -52,8 +31,7 @@
 - **待确认**：同名/多岗位歧义的人工确认，走统一确认流程（保留操作者、时间、原消息引用）。
 - **招聘看板**：候选人数、应聘数、待确认数、待同步数、阶段分布、待进行面试、超期跟进。
 - **同步管理**：模拟外部表格的同步任务与失败重试（有上限退避、幂等 upsert、超时恢复）。
-- **业务规则**：姓名非唯一、未提及字段保留、明确清空、建议/否定/已安排/已完成/更正、
-  面试改期不重复创建、更正保留历史、相对日期按消息时间解释、去重、事务审计。
+- **业务规则**：姓名非唯一、未提及字段保留、明确清空、建议/否定/已安排/已完成/更正、面试改期不重复创建、更正保留历史、相对日期按消息时间解释、去重、事务审计。
 
 ---
 
@@ -87,26 +65,6 @@ app.py（Streamlit 五页面）
 
 ---
 
-## 目录结构
-
-```
-app.py                 Streamlit 五页面入口
-harness/               领域层（Schema / Harness / 时间 / 看板 / 同步 / 演示事件）
-adapters/              模型适配器 + 模拟同步适配器
-storage/               SQLite 数据模型与仓储（含旧库迁移）
-prompts/extract.md     招聘事件提取提示词
-scripts/extract_one.py 单条消息提取 CLI（不写数据库）
-scripts/init_demo.py   离线演示初始化（重放人工标注事件）
-docs/                  SOLUTION / DEMO_SCRIPT / EVALUATION
-recruitflow-data/      模拟数据包与资料校验脚本
-tests/                 pytest 测试（87 个）
-.env.example           环境变量示例（占位值）
-requirements.txt       依赖清单
-pytest.ini             pytest 配置
-```
-
----
-
 ## 技术栈与依赖
 
 | 组件 | 说明 |
@@ -118,15 +76,7 @@ pytest.ini             pytest 配置
 | pytest | 测试（含 Streamlit AppTest） |
 | DeepSeek / Zhipu / Anthropic | 真实模型适配器 |
 
-依赖见 `requirements.txt`：
-
-```
-pydantic>=2
-anthropic>=1
-streamlit>=1.36
-```
-
-> DeepSeek 与 Zhipu 适配器用标准库 `urllib` 实现，无额外依赖；`anthropic` SDK 用于 Anthropic 适配器。
+依赖见 `requirements.txt`
 
 ---
 
@@ -148,9 +98,7 @@ python -m streamlit run app.py
 
 ## 配置（环境变量）
 
-密钥**仅从环境变量读取**，不落库、不写日志、不打印。复制 `.env.example` 到你的环境（或 `.env`）。
-
-### DeepSeek 适配器（默认真实模型，`deepseek-flash`）
+### DeepSeek 适配器（默认 `deepseek-flash`）
 
 | 变量 | 必填 | 说明 |
 |---|---|---|
@@ -159,30 +107,6 @@ python -m streamlit run app.py
 | `DEEPSEEK_MODEL` | 否 | 模型名称，默认 `deepseek-flash` |
 | `DEEPSEEK_TIMEOUT` | 否 | 请求超时秒数，默认 60 |
 
-### 智谱（GLM）适配器（默认 `glm-4.7-flash`）
-
-| 变量 | 必填 | 说明 |
-|---|---|---|
-| `ZHIPU_API_KEY` | 是 | API 密钥 |
-| `ZHIPU_BASE_URL` | 否 | 自定义 API 地址，默认 `https://open.bigmodel.cn/api/paas/v4` |
-| `ZHIPU_MODEL` | 否 | 模型名称，默认 `glm-4.7-flash` |
-| `ZHIPU_TIMEOUT` | 否 | 请求超时秒数，默认 60 |
-
-### Anthropic 适配器（默认 `claude-opus-5-5`）
-
-| 变量 | 必填 | 说明 |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | 是 | API 密钥 |
-| `ANTHROPIC_BASE_URL` | 否 | 自定义 API 地址 |
-| `RECRUITFLOW_MODEL` | 否 | 模型名称，默认 `claude-opus-5-5` |
-| `RECRUITFLOW_TIMEOUT` | 否 | 请求超时秒数，默认 60 |
-
-### 其它
-
-| 变量 | 说明 |
-|---|---|
-| `RECRUITFLOW_DB_PATH` | 业务/演示数据库路径，默认 `recruitflow-demo.db` |
-| `RECRUITFLOW_MOCK_SYNC_DB` | 模拟外部表格路径，默认 `mock-sync.db` |
 
 未配置密钥时，真实适配器会**明确报错，不会静默切换到 Fake 或离线结果**。
 
@@ -231,36 +155,6 @@ python -m scripts.extract_one "新增候选人C101周晓，应聘产品运营，
 
 ---
 
-## 公开预览（在线部署）
-
-可部署到 Streamlit Community Cloud 等平台，作为无需密钥的**只读演示**：
-
-- `RECRUITFLOW_PUBLIC_PREVIEW=1` 开启公开预览，默认**只读**（台账/看板/待确认/同步只读，不写库）。
-- 配置 `RECRUITFLOW_DEMO_PASSWORD` 后，访客输入正确口令（**服务端校验**）方可进行真实 AI 操作。
-- 真实 AI 操作有**服务端限制**（不依赖隐藏按钮）：
-  - `RECRUITFLOW_MAX_MSG_LEN`：消息长度上限（默认 500 字符）。
-  - `RECRUITFLOW_AI_RATE_LIMIT` + `RECRUITFLOW_AI_RATE_WINDOW_SECONDS`：调用频率（默认每 3600 秒 10 次）。
-  - `RECRUITFLOW_AI_TOTAL_LIMIT`：总调用次数上限（默认 100）。
-  - `RECRUITFLOW_LIMITS_DB`：限制计数库路径（默认 `demo-limits.db`）。
-- 访客**无法重置数据库或执行管理操作**（重置仅能通过 `scripts/init_demo.py` 命令行，页面无此入口）。
-- 页面顶部提示「仅使用虚构数据；公共演示数据可能被其他访客看到」。
-
-> 托管平台（如 Streamlit Community Cloud）的本地文件系统通常**不持久**：SQLite 数据库与限制计数
-> 会在重启/重新部署后重置，应用会重建初始演示数据。若需持久化，需自行挂载持久存储。
-
----
-
-## 数据库说明
-
-- 业务/演示库为**文件型 SQLite**，默认路径 `recruitflow-demo.db`（`RECRUITFLOW_DB_PATH` 覆盖）。
-- 模拟外部表格为**独立 SQLite 文件** `mock-sync.db`（`RECRUITFLOW_MOCK_SYNC_DB` 覆盖），
-  用于验证“程序重启后外部记录仍在”与同步恢复。
-- 旧库缺列由 `storage.db.migrate_db` 安全 `ALTER TABLE` 补齐，**不删除已有数据**。
-- 离线演示初始化：`python -m scripts.init_demo`（默认拒绝覆盖已有数据），`--reset` 显式重置
-  专用演示库；测试与演示数据库分离（测试用临时库）。
-
----
-
 ## 核心业务规则
 
 1. **候选人与应聘记录分离**：一名候选人可应聘多个岗位，按应聘记录定位。
@@ -295,44 +189,6 @@ python -m scripts.extract_one "新增候选人C101周晓，应聘产品运营，
 - 面试状态：`待进行` / `已完成` / `已取消`；面试结果：`通过` / `待定` / `未通过`
 - 同步状态：`pending` / `processing` / `retry_wait` / `succeeded` / `failed`
 
----
-
-## 测试与评测
-
-| 类别 | 命令 | 说明 |
-|---|---|---|
-| 单元/集成测试 | `python -m pytest -q` | 87 个测试（存储/Schema/适配器/Harness/看板/同步/AppTest/端到端业务） |
-| 业务执行评测 | `python -m pytest tests/test_e2e_business.py -q` | 空库重放 20 次投递的人工标注事件，核对 6 候选人/7 应聘/3 面试/17 业务事件/0 未解决确认 |
-| 资料一致性校验 | `cd recruitflow-data && python scripts/validate_fixtures.py` | 校验 fixtures 自身一致性 |
-| 界面检查 | `python -m pytest tests/test_app.py -q` | Streamlit AppTest（页面启动/提交/重复/待确认/空看板） |
-
-评测边界：**业务执行评测（A）** 注入人工标注事件经真实 Harness + 存储层，可用 expected 文件核对，
-但**不把通过率称为 AI 提取准确率**。**真实 AI 评测（B）** 已用 DeepSeek 做单条消息验证
-（最小请求 HTTP 200、招聘提取字段正确、自然语言→Harness→台账端到端 `applied`）；
-完整 20 投递的模型提取未批量执行。详见 `docs/EVALUATION.md`。
-
----
-
-## 模拟与真实接入边界
-
-- **模拟入口**：`recruitflow-data/fixtures/messages.json` 按 `deliveries` 顺序投递；界面标注“企微消息入口为模拟”。
-- **离线/测试**：`FakeAdapter` 仅用于自动化测试，不实现自然语言理解，不得用于生产。
-- **真实模型**：DeepSeek（默认，已验证）/ Anthropic / 智谱 GLM 通过环境变量配置；失败明确报错，不静默降级。
-- **外部平台**：企业微信、腾讯文档**未接入**；同步使用 `MockSyncAdapter`（模拟外部表格），
-  “同步成功”始终写作“模拟同步成功”，不宣称腾讯文档已接通。
-
----
-
-## 已知限制
-
-- 真实 AI 端到端评测仅做单条消息验证，未批量跑 20 条 fixtures，故暂无完整 AI 提取准确率/延迟/成本。
-- 界面仅经 Streamlit AppTest 验证，未做完整浏览器人工验收。
-- 企业微信、腾讯文档未接入（模拟）。
-- 招聘看板使用 `st.bar_chart`（未用 Plotly）。
-- 同步为单 worker（无 Redis/Celery/常驻服务），仅处理演示规模。
-- 智谱账户限流（429/1302）未解除；保留适配器，不再探测。
-
----
 
 ## 文档索引
 
